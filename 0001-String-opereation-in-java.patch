@@ -1,0 +1,285 @@
+From ef7df079f3a4b7b376a5c8a9edf7089044006197 Mon Sep 17 00:00:00 2001
+From: vaibhav nawale <vaibhavnawale2482@gmail.com>
+Date: Sat, 27 Dec 2025 12:41:39 +0530
+Subject: [PATCH] String opereation in java
+
+---
+ 2025-12-25/Array.java              |  77 -----------------------------
+ 2025-12-25/day5.class              | Bin 1115 -> 0 bytes
+ 2025-12-25/linear_search.java      |  29 -----------
+ 2025-12-25/subarray.java           |  46 -----------------
+ vaibhav/2025-12-26/palindrome.java |  16 ++++++
+ vaibhav/2025-12-26/reverse.java    |  11 +++++
+ vaibhav/2025-12-26/vowels.java     |  21 ++++++++
+ 7 files changed, 48 insertions(+), 152 deletions(-)
+ delete mode 100644 2025-12-25/Array.java
+ delete mode 100644 2025-12-25/day5.class
+ delete mode 100644 2025-12-25/linear_search.java
+ delete mode 100644 2025-12-25/subarray.java
+ create mode 100644 vaibhav/2025-12-26/palindrome.java
+ create mode 100644 vaibhav/2025-12-26/reverse.java
+ create mode 100644 vaibhav/2025-12-26/vowels.java
+
+diff --git a/2025-12-25/Array.java b/2025-12-25/Array.java
+deleted file mode 100644
+index b27340b..0000000
+--- a/2025-12-25/Array.java
++++ /dev/null
+@@ -1,77 +0,0 @@
+-public class Array {
+-    
+-    public static int Largest_num(int numbers[]) {
+-        int largest = Integer.MIN_VALUE;
+-        int smalest = Integer.MAX_VALUE;
+-        for(int i = 0; i < numbers.length; i ++) {
+-            if (largest < numbers[i]) {
+-                largest = numbers[i];
+-            }
+-            if (smalest > numbers[i]) {
+-                smalest = numbers[i];
+-                
+-            }
+-          
+-        } 
+-        System.out.println(smalest);
+-        return largest;
+-    }
+-
+-
+-    public static void reverse_array(int numbers[]) {
+-        int start = 0, last = numbers.length - 1;
+-
+-        while (start < last) {
+-            int temp = numbers[last];
+-            numbers[last] = numbers[start];
+-            numbers[start] = temp;
+-            start++;
+-            last--;
+-        }
+-
+-
+-    }
+-    
+-    public static void printreversearray(int numbers[]) {
+-        for(int i = 0; i < numbers.length; i++) {
+-            System.out.print(numbers[i]+ " ");
+-
+-        }
+-    }
+-
+-public static void MaxSubarraySum(int array[]) {
+-    int CurrSum = 0;
+-    int MaxSum = Integer.MIN_VALUE;
+-    for(int i = 0; i < array.length; i++) {
+-        int start = i;
+-        for(int j = i; j < array.length; j++) {
+-            int end = j;
+-            CurrSum = 0;
+-            for(int k = start; k <= end; k++) {
+-                CurrSum = array[k];
+-            }
+-            System.out.print(CurrSum + " ");
+-            if (MaxSum < CurrSum) {
+-                MaxSum = CurrSum;
+-            }
+-        }
+-        System.out.println();
+-    }
+-}
+-
+-    public static void main(String[] args) {
+-        int numbers[] = {2, 4, 6, 8, 10};
+-        int array[] = {1, -2, 6, -1, 3};
+-        System.out.println("largest number is :" + Largest_num(numbers));
+-        reverse_array(numbers);
+-        printreversearray(numbers);
+-        MaxSubarraySum(array);
+-       
+-     
+-
+-    }
+-
+-   
+-
+-    
+-}
+diff --git a/2025-12-25/day5.class b/2025-12-25/day5.class
+deleted file mode 100644
+index 7eac89b9b3ecd074b29c1e047ec60e767659d9d0..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 1115
+zcmaJ=O-~b16g_YHG3_wWp;!=Uu^?bukos+6fkaCh8VjQ-Vk)ag`vODTnWi%(cJInx
+z;F7pu!$ucsh~WqLWBdWesCU{XmXx@7@80*`z2}~D=g#-vXXgOc@koILj|{I0AN&m3
+zAwS~j8aMaT`re@^I}H96!!(>V22Ucnqac8w3`NBdR0eN_w;wR5HNzCVS)^4ypp3+B
+zKA+47F@lf`O~oj}7odx6+Yxm_v|3akQs@*ltn~AyVLC;pDR?~-z!iqzmcAX&=`Xj|
+z6^vs-##I%QxW+JcNeYA9Z~<y2VJ5nu9VLWlnERRJPM9=DRm3pOFj41Kk+sY+cU~FJ
+z0eQB=O~-a~^U1+%5}UOuf+18Ov0JVBo@j3Ky&ByN7ad-%Zt_O&?5%TyIE*KD2Vs&s
+zGUgei-8_R*v|7!w$Qdq3&~4?iD~nq7)Uq7gY4XOVa1N}B9YBhBJrnJC&T5&J_!B3d
+zH!I>z{4oppv83P@mSv<}X}1~X{(VHlJhG}H-R(eEZH|{6tJ!9F-`}HNV7J}|H!C$^
+z&lN1I+G=D5RrK9lNZf8W#3kYVedvx=roY2Ih%B$wiiRUHG*Efd6wPdn+qSS}++&y@
+z&~zD988nU4{|}}4?CQb{4YNce0eHaN`KSFlonmAeSzqc4*hg|0;<UTZt{-$~pR61D
+z!u@^7PI^|Osq+sAr=rVK$M8i@-%9M{&kyO89;HtDI8^|=RMUqLfsK+sL0~g<tHARM
+z5*ztRZ$ZrBMi2fS#dzsGulc_zC6A`)C9gKCmweiyUh-=Zy(DW1y%f-1>jf>bx)}Wm
+zc`YU#W8@Qt!(*QjIYEfr*cqk(I=X7QbfzJbuTrUDED)h3Xt+b9RxpMQL^`yFApORQ
+gj5)@JNajK(`6d!%1H^EVR+5rj{tS0<9}hA47oqtA?EnA(
+
+diff --git a/2025-12-25/linear_search.java b/2025-12-25/linear_search.java
+deleted file mode 100644
+index bc40d11..0000000
+--- a/2025-12-25/linear_search.java
++++ /dev/null
+@@ -1,29 +0,0 @@
+-
+-
+-
+-public class linear_search {
+-
+-    
+-    
+-    public static int linear_search(int numbers[], int key) {
+-        for(int i = 0; i < numbers.length; i++) {
+-            if (numbers[i] == key) {
+-                return i;
+-            } 
+-        }
+-        return -1;
+-    }    
+-    
+-    public static void main(String[] args) {
+-        int numbers[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+-        int key = 9;
+-
+-        int index = linear_search(numbers, key);
+-             if (index == -1) {
+-                System.out.println("not found");
+-             }else {
+-                System.out.println("key is found:" + index);
+-             }
+-    }
+-
+-}
+diff --git a/2025-12-25/subarray.java b/2025-12-25/subarray.java
+deleted file mode 100644
+index a81d5d0..0000000
+--- a/2025-12-25/subarray.java
++++ /dev/null
+@@ -1,46 +0,0 @@
+-public class subarray {
+-
+-    public static void Print_Subarray(int array[]) {
+-        for (int i = 0; i < array.length; i++) {
+-            int start = i;
+-            for (int j = i; j < array.length; j++) {
+-                int end = j;
+-                for (int k = start; k <= end; k++) {
+-                    System.out.print("(" + array[k] + ")");
+-                }
+-                System.out.println();
+-            }
+-            System.out.println();
+-        }
+-    }
+-
+-    public static void Maxsubarraysum(int array[]) {
+-        int cursum = 0;
+-        int maxsum = Integer.MIN_VALUE;
+-        for (int i = 0; i < array.length; i++) {
+-            int start = i;
+-            for (int j = i; j < array.length; j++) {
+-                int end = j;
+-                cursum = 0;
+-                for (int k = start; k < +end; k++) {
+-                    cursum += array[k];
+-
+-                }
+-                System.out.println(cursum);
+-                if (maxsum < cursum) {
+-                    maxsum = cursum;
+-                }
+-            }
+-
+-            
+-        }
+-        System.out.println("MAx sum is:" + maxsum);
+-    }
+-
+-    public static void main(String[] args) {
+-        int array[] = { 2, 4, 6, 8, 10 };
+-        // Print_Subarray(array);
+-        
+-        Maxsubarraysum(array);
+-    }
+-}
+diff --git a/vaibhav/2025-12-26/palindrome.java b/vaibhav/2025-12-26/palindrome.java
+new file mode 100644
+index 0000000..ed8fd92
+--- /dev/null
++++ b/vaibhav/2025-12-26/palindrome.java
+@@ -0,0 +1,16 @@
++public class palindrome {
++    public static boolean ispalindrome(String str) {
++        for(int i = 0; i < str.length()/2; i++) {
++            int n = str.length();
++            if (str.charAt(i) != str.charAt(n-i-1)) {
++                return false;
++            }
++        }
++        return true;
++    }
++
++    public static void main(String[] args) {
++        String str = "noon";
++        System.out.println(ispalindrome(str));
++    }
++}
+diff --git a/vaibhav/2025-12-26/reverse.java b/vaibhav/2025-12-26/reverse.java
+new file mode 100644
+index 0000000..a4992b8
+--- /dev/null
++++ b/vaibhav/2025-12-26/reverse.java
+@@ -0,0 +1,11 @@
++public class reverse {
++    public static void main(String[] args) {
++        String str = "hello world";
++        String reverse = "";
++        for(int i = str.length()-1; i>=0; i--) {
++            reverse += str.charAt(i);
++        }
++        System.out.println("Original string :" + str );
++        System.out.println("Reversed string :" + reverse );
++    }
++}
+diff --git a/vaibhav/2025-12-26/vowels.java b/vaibhav/2025-12-26/vowels.java
+new file mode 100644
+index 0000000..096dab7
+--- /dev/null
++++ b/vaibhav/2025-12-26/vowels.java
+@@ -0,0 +1,21 @@
++public class vowels {
++    public static void main(String[] args) {
++        String str = "VowelsAndconsonents";
++        int vowels = 0;
++        int consonents = 0;
++        str = str.toLowerCase();
++        for(int i = 0; i < str.length(); i++){
++            char ch = str.charAt(i);
++            if (ch >= 'a' && ch <= 'z') {
++                if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' ) {
++                    vowels++;
++                }else{
++                    consonents++;
++                }
++            }
++        }
++        System.out.println("original string :" + str);
++        System.out.println("vowels :" + vowels);
++        System.out.println("consonents:" + consonents);
++    }
++}
+\ No newline at end of file
+-- 
+2.50.1.windows.1
+
