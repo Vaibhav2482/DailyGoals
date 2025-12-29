@@ -1,0 +1,25 @@
+SQL Data Types: Syntax & Explanation
+
+
+Data Type	Syntax		Explanation
+TINYINT		TINYINT			Stores very small integers. 1 byte storage. Signed: -128 to 127. Unsigned: 0 to 255.
+SMALLINT	SMALLINT		Stores small integers. 2 bytes storage. Signed: -32,768 to 32,767. Unsigned: 0 to 65,535.
+INT/INTEGER	INT or INTEGER		Standard integer type. 4 bytes storage. Signed: -2.1B to 2.1B. Unsigned: 0 to 4.2B.
+BIGINT		BIGINT			Stores large integers. 8 bytes storage. Signed: -9.2×10¹⁸ to 9.2×10¹⁸.
+DECIMAL		DECIMAL			Exact numeric with fixed precision. p=total digits, s=decimal places.
+NUMERIC		NUMERIC			Same as DECIMAL. Exact precision decimal numbers.
+FLOAT		FLOAT			Single-precision floating-point number. Approximate decimal values.
+DOUBLE		DOUBLE			Double-precision floating-point. More precise than FLOAT.
+CHAR		CHAR(n)			Fixed-length character string. Always uses n characters of storage.
+VARCHAR		VARCHAR(n)		Variable-length character string. Uses only required storage up to n.
+TEXT		TEXT			Stores large text data. Size varies by database.
+DATE		DATE			Stores calendar date without time. Format: YYYY-MM-DD.
+TIME		TIME			Stores time of day without date. Format: HH:MM:SS.
+DATETIME	DATETIME		Stores both date and time together.
+TIMESTAMP	TIMESTAMP		Stores date and time, often auto-updated. Unix timestamp based.
+BOOLEAN		BOOLEAN			Stores TRUE or FALSE values. Typically stored as 1/0.
+BINARY		BINARY(n)		Fixed-length binary data. Stores byte strings.
+VARBINARY	VARBINARY(n)		Variable-length binary data.
+BLOB		BLOB			Binary Large Object. Stores large binary data like images.
+JSON		JSON			Stores JSON formatted data. Supports JSON operations.
+ENUM		ENUM('val1','val2')	Enumeration type. Column can be one of predefined string values.
